@@ -34,7 +34,7 @@
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">
-			<value>classpath:database.properties</value>
+			<value>classpath:database.properties.dist</value>
 		</property>
 		<property name="ignoreResourceNotFound" value="false" />
 	</bean>
