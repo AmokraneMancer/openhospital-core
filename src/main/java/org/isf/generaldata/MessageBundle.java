@@ -59,9 +59,8 @@ public class MessageBundle {
 		try {
 			if (resourceBundle != null) {
 				message = resourceBundle.getString(key);
-			} else {
+			} else
 				return key;
-			}
 		} catch (MissingResourceException e) {
 			if (GeneralData.DEBUG) {
 				message = key;

@@ -234,9 +234,8 @@ public class TableSorter extends TableMap {
 		 */
 
 		if (high - low >= 4 && compare(from[middle - 1], from[middle]) <= 0) {
-			if (high - low >= 0) {
+			if (high - low >= 0)
 				System.arraycopy(from, low, to, low, high - low);
-			}
 			return;
 		}
 

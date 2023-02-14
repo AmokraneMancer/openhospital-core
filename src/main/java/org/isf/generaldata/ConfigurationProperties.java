@@ -91,9 +91,8 @@ public abstract class ConfigurationProperties {
 			logger.info("File {} loaded.", fileProperties);
 		} catch (IOException e) {
 			logger.error(">> '{}' file not found.", fileProperties);
-			if (exitOnFail) {
+			if (exitOnFail)
 				System.exit(1);
-			}
 		}
 		return prop;
 	}

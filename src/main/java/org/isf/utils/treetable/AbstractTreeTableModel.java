@@ -134,10 +134,9 @@ public abstract class AbstractTreeTableModel implements TreeTableModel {
         for (int i = listeners.length-2; i>=0; i-=2) {
             if (listeners[i]==TreeModelListener.class) {
                 // Lazily create the event:
-                if (e == null) {
-                    e = new TreeModelEvent(source, path,
+                if (e == null)
+                    e = new TreeModelEvent(source, path, 
                                            childIndices, children);
-                }
                 ((TreeModelListener)listeners[i+1]).treeNodesChanged(e);
             }          
         }
@@ -161,10 +160,9 @@ public abstract class AbstractTreeTableModel implements TreeTableModel {
         for (int i = listeners.length-2; i>=0; i-=2) {
             if (listeners[i]==TreeModelListener.class) {
                 // Lazily create the event:
-                if (e == null) {
-                    e = new TreeModelEvent(source, path,
+                if (e == null)
+                    e = new TreeModelEvent(source, path, 
                                            childIndices, children);
-                }
                 ((TreeModelListener)listeners[i+1]).treeNodesInserted(e);
             }          
         }
@@ -188,10 +186,9 @@ public abstract class AbstractTreeTableModel implements TreeTableModel {
         for (int i = listeners.length-2; i>=0; i-=2) {
             if (listeners[i]==TreeModelListener.class) {
                 // Lazily create the event:
-                if (e == null) {
-                    e = new TreeModelEvent(source, path,
+                if (e == null)
+                    e = new TreeModelEvent(source, path, 
                                            childIndices, children);
-                }
                 ((TreeModelListener)listeners[i+1]).treeNodesRemoved(e);
             }          
         }
@@ -215,10 +212,9 @@ public abstract class AbstractTreeTableModel implements TreeTableModel {
         for (int i = listeners.length-2; i>=0; i-=2) {
             if (listeners[i]==TreeModelListener.class) {
                 // Lazily create the event:
-                if (e == null) {
-                    e = new TreeModelEvent(source, path,
+                if (e == null)
+                    e = new TreeModelEvent(source, path, 
                                            childIndices, children);
-                }
                 ((TreeModelListener)listeners[i+1]).treeStructureChanged(e);
             }          
         }

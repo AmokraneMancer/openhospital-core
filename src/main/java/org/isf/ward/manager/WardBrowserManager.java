@@ -309,9 +309,7 @@ public class WardBrowserManager {
 			Ward maternity = getDefaultMaternityWard();
 			newWard(maternity);
 			return true;
-		} else {
-			return exists;
-		}
+		} else return exists;
 	}
 	
 	/**
@@ -327,9 +325,7 @@ public class WardBrowserManager {
 			Ward opd = getDefaultOPDWard();
 			newWard(opd);
 			return true;
-		} else {
-			return exists;
-		}
+		} else return exists;
 	}
 	
 	/**

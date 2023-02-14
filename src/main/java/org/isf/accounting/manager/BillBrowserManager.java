@@ -121,9 +121,7 @@ public class BillBrowserManager {
 	 * @throws OHServiceException 
 	 */
 	public List<BillItems> getItems(int billID) throws OHServiceException {
-		if (billID == 0) {
-			return new ArrayList<>();
-		}
+		if (billID == 0) return new ArrayList<>();
 		return ioOperations.getItems(billID);
 	}
 
@@ -170,9 +168,7 @@ public class BillBrowserManager {
 	 * @throws OHServiceException 
 	 */
 	public List<BillPayments> getPayments(int billID) throws OHServiceException {
-		if (billID == 0) {
-			return new ArrayList<>();
-		}
+		if (billID == 0) return new ArrayList<>();
 		return ioOperations.getPayments(billID);
 	}
 	
@@ -194,12 +190,8 @@ public class BillBrowserManager {
 		validateBill(newBill, billItems, billPayments);
 		int billId = newBill(newBill);
 		boolean result = billId > 0;
-		if (!billItems.isEmpty()) {
-			result = newBillItems(billId, billItems);
-		}
-		if (!billPayments.isEmpty()) {
-			result = result && newBillPayments(billId, billPayments);
-		}
+		if (!billItems.isEmpty()) result = newBillItems(billId, billItems);
+		if (!billPayments.isEmpty()) result = result && newBillPayments(billId, billPayments);
 		return result;
 	}
 
@@ -334,9 +326,7 @@ public class BillBrowserManager {
 	 * @throws OHServiceException 
 	 */
 	public List<Bill> getBills(List<BillPayments> billPayments) throws OHServiceException {
-		if (billPayments.isEmpty()) {
-			return new ArrayList<>();
-		}
+		if (billPayments.isEmpty()) return new ArrayList<>();
 		return ioOperations.getBills(billPayments);
 	}
 

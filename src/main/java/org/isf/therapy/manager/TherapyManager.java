@@ -268,9 +268,8 @@ public class TherapyManager {
 
 			int dayCount = 0;
 			for (LocalDateTime date : th.getDates()) {
-				if (date.isAfter(todayDate) || date.equals(todayDate)) {
+				if (date.isAfter(todayDate) || date.equals(todayDate))
 					dayCount++;
-				}
 			}
 
 			if (dayCount != 0) {

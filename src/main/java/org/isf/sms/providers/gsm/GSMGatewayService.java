@@ -93,9 +93,8 @@ public class GSMGatewayService implements SmsSenderInterface, SerialPortEventLis
 				LOGGER.debug("COM PORT found ({})", port);
 				break;
 
-			} else {
+			} else
 				portId = null;
-			}
 		}
 
 		if (portId != null) {
@@ -110,13 +109,11 @@ public class GSMGatewayService implements SmsSenderInterface, SerialPortEventLis
 						LOGGER.debug("Output stream OK");
 						connected = true;
 
-					} else {
+					} else
 						LOGGER.debug("A problem occured on output stream");
-					}
 
-				} else {
+				} else
 					LOGGER.debug("Not possible to open the stream");
-				}
 
 				try {
 					serialPort.addEventListener(this);
@@ -156,9 +153,8 @@ public class GSMGatewayService implements SmsSenderInterface, SerialPortEventLis
 
 				// SET SMS MODE
 				LOGGER.trace(GSMParameters.CMGF);
-				if (!debug) {
+				if (!debug)
 					outputStream.write(GSMParameters.CMGF.getBytes());
-				}
 				Thread.sleep(1000);
 
 				// SET SMS PARAMETERS
@@ -168,22 +164,19 @@ public class GSMGatewayService implements SmsSenderInterface, SerialPortEventLis
 
 				// SET SMS NUMBER
 				LOGGER.trace(buildCMGS.toString());
-				if (!debug) {
+				if (!debug)
 					outputStream.write(buildCMGS.toString().getBytes());
-				}
 				Thread.sleep(1000);
 
 				// SET SMS TEXT
 				LOGGER.trace(text);
-				if (!debug) {
+				if (!debug)
 					outputStream.write(text.getBytes());
-				}
 				Thread.sleep(1000);
 
 				// SEND SMS
-				if (!debug) {
+				if (!debug)
 					outputStream.write("\u001A".getBytes()); // Ctrl-Z();
-				}
 				Thread.sleep(1000);
 
 				// FLUSH STREAM

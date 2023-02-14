@@ -81,9 +81,8 @@ public class DbQueryLogger {
     public ResultSet getDataWithParams(String aQuery, List<?> params, boolean autocommit) throws OHException {
 	    if (LOGGER.isDebugEnabled()) {
 		    LOGGER.debug("Query {}", sanitize(aQuery));
-		    if (!params.isEmpty()) {
+		    if (!params.isEmpty())
 			    LOGGER.trace("  parameters : {}", sanitize(params));
-		    }
 	    }
 	    ResultSet results;
 	    Connection conn = null;
@@ -146,9 +145,8 @@ public class DbQueryLogger {
     public boolean setDataWithParams(String aQuery, List<?> params, boolean autocommit) throws OHException {
 	    if (LOGGER.isDebugEnabled()) {
 		    LOGGER.debug("Query {}", sanitize(aQuery));
-		    if (!params.isEmpty()) {
+		    if (!params.isEmpty())
 			    LOGGER.trace("  parameters : {}", sanitize(params));
-		    }
 	    }
 	    Connection conn = null;
 	    try {
